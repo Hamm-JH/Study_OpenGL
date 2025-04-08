@@ -3,6 +3,7 @@
 #include <iostream>
 #include "shader.h"
 #include "Model/Triangle.h"
+#include "Model/Rectangle.h"
 
 // 윈도우 크기 변경 시 호출되는 콜백 함수
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
@@ -42,10 +43,16 @@ int main() {
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
     // 셰이더 컴파일
-    Shader ourShader("D:/Project/OpenGL/shaders/basic.vert", "D:/Project/OpenGL/shaders/basic.frag");
+    Shader triangleShader("D:/Project/OpenGL/shaders/basic.vert", "D:/Project/OpenGL/shaders/basic.frag");
+    
+    // 사각형용 다른 색상의 셰이더
+    Shader rectangleShader("D:/Project/OpenGL/shaders/basic.vert", "D:/Project/OpenGL/shaders/rectangle.frag");
     
     // 삼각형 객체 생성
-    Triangle triangle(&ourShader);
+    Triangle triangle(&triangleShader);
+    
+    // 사각형 객체 생성
+    Rectangle rectangle(&rectangleShader);
 
     // 렌더링 루프
     while (!glfwWindowShouldClose(window)) {
@@ -58,6 +65,9 @@ int main() {
 
         // 삼각형 그리기
         triangle.draw();
+        
+        // 사각형 그리기
+        rectangle.draw();
 
         // 버퍼 교체 및 이벤트 처리
         glfwSwapBuffers(window);

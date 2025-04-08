@@ -9,6 +9,7 @@
                 "-g",
                 "${workspaceFolder}/src/main.cpp",
                 "${workspaceFolder}/src/Model/Triangle.cpp",
+                "${workspaceFolder}/src/Model/Rectangle.cpp",
                 "${workspaceFolder}/src/glad.c",
                 "-o",
                 "${workspaceFolder}/build/OpenGLTutorial.exe",
