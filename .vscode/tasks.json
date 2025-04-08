@@ -8,6 +8,7 @@
             "args": [
                 "-g",
                 "${workspaceFolder}/src/main.cpp",
+                "${workspaceFolder}/src/Model/Triangle.cpp",
                 "${workspaceFolder}/src/glad.c",
                 "-o",
                 "${workspaceFolder}/build/OpenGLTutorial.exe",
